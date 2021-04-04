@@ -1,7 +1,7 @@
 @php
     $nav_links = [
         [
-            'name' => 'Home',
+            'name' => 'Inicio',
             'route' => route('home'),
             'active' => request()->routeIs('home')
         ],
@@ -27,13 +27,13 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     @foreach ($nav_links as $nav_link)
-                    
+
                         <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
                             {{ $nav_link['name'] }}
                         </x-jet-nav-link>
 
                     @endforeach
-                   
+
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                                     </div>
                                 </button>
                             @endif
-                            
+
                         </x-slot>
 
                         <x-slot name="content">
@@ -124,8 +124,8 @@
                         </x-slot>
                     </x-jet-dropdown>
                 @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline"></a>
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline"></a>
                 @endauth
             </div>
 
@@ -146,13 +146,13 @@
         <div class="pt-2 pb-3 space-y-1">
 
             @foreach ($nav_links as $nav_link)
-            
+
                 <x-jet-responsive-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
                     {{ $nav_link['name'] }}
                 </x-jet-responsive-nav-link>
 
             @endforeach
-     
+
         </div>
 
         <!-- Responsive Settings Options -->
@@ -228,15 +228,15 @@
 
             <div class="py-1 border-t border-gray-200">
                 <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                    Login
+
                 </x-jet-responsive-nav-link>
 
                 <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
-                    Register
+
                 </x-jet-responsive-nav-link>
             </div>
 
         @endauth
     </div>
-    
+
 </nav>
